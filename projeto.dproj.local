@@ -3,28 +3,30 @@
 	<Transactions>
     <Transaction>2020/05/19 18:17:02.000.074,=C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2020/05/19 18:29:36.000.334,=E:\isaque\delphi\crud-mvc\model\uDB.pas</Transaction>
-    <Transaction>2020/05/19 18:32:22.000.245,C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas=E:\isaque\delphi\crud-mvc\view\uPrincipal.pas</Transaction>
-    <Transaction>2020/05/19 18:32:22.000.245,C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.dfm=E:\isaque\delphi\crud-mvc\view\uPrincipal.dfm</Transaction>
+    <Transaction>2020/05/19 18:32:22.000.245,E:\isaque\delphi\crud-mvc\view\uPrincipal.dfm=C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2020/05/19 18:32:22.000.245,E:\isaque\delphi\crud-mvc\view\uPrincipal.pas=C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2020/05/19 18:33:10.000.637,=C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2020/05/19 18:34:08.000.078,C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas=E:\isaque\delphi\crud-mvc\model\uAlunoModel.pas</Transaction>
+    <Transaction>2020/05/19 18:34:08.000.078,E:\isaque\delphi\crud-mvc\model\uAlunoModel.pas=C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2020/05/19 18:34:11.000.684,=C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2020/05/19 18:34:24.000.593,C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas=E:\isaque\delphi\crud-mvc\controller\uAlunoController.pas</Transaction>
-    <Transaction>2020/05/19 18:35:04.000.147,C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\isaque\delphi\crud-mvc\projeto.dproj</Transaction>
+    <Transaction>2020/05/19 18:34:24.000.593,E:\isaque\delphi\crud-mvc\controller\uAlunoController.pas=C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/05/19 18:35:04.000.147,E:\isaque\delphi\crud-mvc\projeto.dproj=C:\Users\Isaque\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2020/05/19 19:02:03.000.759,=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
-    <Transaction>2020/05/19 19:02:18.000.960,E:\isaque\delphi\crud-mvc\Unit1.pas=E:\isaque\delphi\crud-mvc\dao\uAlunoDao.pas</Transaction>
+    <Transaction>2020/05/19 19:02:18.000.960,E:\isaque\delphi\crud-mvc\dao\uAlunoDao.pas=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
     <Transaction>2020/05/19 19:04:34.000.931,E:\isaque\delphi\crud-mvc\model\uDB.pas=</Transaction>
     <Transaction>2020/05/19 19:05:02.000.278,=E:\isaque\delphi\crud-mvc\helpers\uDB.pas</Transaction>
     <Transaction>2020/05/20 08:15:39.000.807,=E:\isaque\delphi\crud-mvc\helpers\uDao.pas</Transaction>
-    <Transaction>2020/05/20 20:10:37.345,E:\isaque\delphi\crud-mvc\view\uCadastroAlunos.pas=E:\isaque\delphi\crud-mvc\view\uPrincipal.pas</Transaction>
-    <Transaction>2020/05/20 20:10:37.345,E:\isaque\delphi\crud-mvc\view\uCadastroAlunos.dfm=E:\isaque\delphi\crud-mvc\view\uPrincipal.dfm</Transaction>
-    <Transaction>2020/05/20 20:29:57.604,=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
-    <Transaction>2020/05/20 20:30:42.010,E:\isaque\delphi\crud-mvc\helpers\uHelpers.pas=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
-    <Transaction>2020/05/20 21:41:10.871,=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
-    <Transaction>2020/05/20 21:41:49.586,E:\isaque\delphi\crud-mvc\db\uDatabase.pas=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
-    <Transaction>2020/05/20 21:58:22.503,=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
-    <Transaction>2020/05/20 21:58:53.052,E:\isaque\delphi\crud-mvc\db\uDmDatabase.pas=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
-    <Transaction>2020/05/20 21:58:53.052,E:\isaque\delphi\crud-mvc\db\uDmDatabase.dfm=E:\isaque\delphi\crud-mvc\Unit1.dfm</Transaction>
-    <Transaction>2020/05/20 22:07:14.692,E:\isaque\delphi\crud-mvc\db\uDatabase.pas=</Transaction>
+    <Transaction>2020/05/20 20:10:37.000.345,E:\isaque\delphi\crud-mvc\view\uPrincipal.dfm=E:\isaque\delphi\crud-mvc\view\uCadastroAlunos.dfm</Transaction>
+    <Transaction>2020/05/20 20:10:37.000.345,E:\isaque\delphi\crud-mvc\view\uPrincipal.pas=E:\isaque\delphi\crud-mvc\view\uCadastroAlunos.pas</Transaction>
+    <Transaction>2020/05/20 20:29:57.000.604,=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
+    <Transaction>2020/05/20 20:30:42.000.010,E:\isaque\delphi\crud-mvc\Unit1.pas=E:\isaque\delphi\crud-mvc\helpers\uHelpers.pas</Transaction>
+    <Transaction>2020/05/20 21:41:10.000.871,=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
+    <Transaction>2020/05/20 21:41:49.000.586,E:\isaque\delphi\crud-mvc\Unit1.pas=E:\isaque\delphi\crud-mvc\db\uDatabase.pas</Transaction>
+    <Transaction>2020/05/20 21:58:22.000.503,=E:\isaque\delphi\crud-mvc\Unit1.pas</Transaction>
+    <Transaction>2020/05/20 21:58:53.000.052,E:\isaque\delphi\crud-mvc\Unit1.dfm=E:\isaque\delphi\crud-mvc\db\uDmDatabase.dfm</Transaction>
+    <Transaction>2020/05/20 21:58:53.000.052,E:\isaque\delphi\crud-mvc\Unit1.pas=E:\isaque\delphi\crud-mvc\db\uDmDatabase.pas</Transaction>
+    <Transaction>2020/05/20 22:07:14.000.692,E:\isaque\delphi\crud-mvc\db\uDatabase.pas=</Transaction>
+    <Transaction>2020/05/21 14:33:05.790,E:\isaque\delphi\crud-mvc\view\uViewAlunos.pas=E:\isaque\delphi\crud-mvc\view\uCadastroAlunos.pas</Transaction>
+    <Transaction>2020/05/21 14:33:05.790,E:\isaque\delphi\crud-mvc\view\uViewAlunos.dfm=E:\isaque\delphi\crud-mvc\view\uCadastroAlunos.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="controller"/>
@@ -41,7 +43,6 @@
     <File Path="model"/>
     <File Path="model\uAlunoModel.pas"/>
     <File Path="view"/>
-    <File Path="view\uCadastroAlunos.pas"/>
-    <File Path="view\uCadastroAlunos.dfm"/>
+    <File Path="view\uViewAlunos.pas"/>
   </ProjectSortOrder>
 </BorlandProject>

@@ -2,7 +2,7 @@ program projeto;
 
 uses
   Vcl.Forms,
-  uCadastroAlunos in 'view\uCadastroAlunos.pas' {frmCadastroAlunos},
+  uViewAlunos in 'view\uViewAlunos.pas' {frmCadastroAlunos},
   uAlunoModel in 'model\uAlunoModel.pas',
   uAlunoController in 'controller\uAlunoController.pas',
   uAlunoDao in 'dao\uAlunoDao.pas',
