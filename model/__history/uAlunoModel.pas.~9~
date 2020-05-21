@@ -1,0 +1,68 @@
+unit uAlunoModel;
+
+interface
+
+type
+
+  TAluno = class
+  private
+    Fid: integer;
+    Fnome: string;
+    Fsobrenome: string;
+    Fturma: string;
+    Fdata_nascimento: TDate;
+  public
+    property id: integer read Fid write Fid;
+    property nome: string read Fnome write Fnome;
+    property sobrenome: string read Fsobrenome write Fsobrenome;
+    property turma: string read Fturma write Fturma;
+    property data_nascimento: TDate read Fdata_nascimento write Fdata_nascimento;
+
+    procedure save();
+    procedure delele();
+
+    constructor getFromID(_id: integer);
+  end;
+
+implementation
+
+uses
+  FireDAC.Comp.Client, udb;
+
+{ TAluno }
+procedure TAluno.delele;
+var
+  qr: TFDQuery;
+begin
+  _db.instanceQuery(qr);
+  try
+    qr.SQL.Add('delete from alunos where id = :id');
+    qr.ParamByName('id').AsInteger := id;
+    qr.ExecSQL();
+  finally
+    qr.Free();
+  end;
+
+end;
+
+constructor TAluno.load(_id: integer);
+begin
+
+end;
+
+procedure TAluno.save;
+var
+  qr: TFDQuery;
+begin
+  _db.instanceQuery(qr);
+  try
+    qr.SQL.Add('insert or replace into alunos(id,nome,sobrenome,turma,data_nascimento) values(:id,:nome,:sobrenome,:turma,:data_nascimento);');
+    qr.ParamByName('id').AsInteger := id;
+    qr.ExecSQL();
+  finally
+    qr.Free();
+  end;
+
+end;
+
+end.

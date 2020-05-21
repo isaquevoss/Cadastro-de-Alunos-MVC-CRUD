@@ -1,0 +1,21 @@
+unit uHelpers;
+
+interface
+
+uses
+  Vcl.Grids;
+
+procedure ClearStringGrid(const Grid: TStringGrid);
+
+implementation
+
+procedure ClearStringGrid(const Grid: TStringGrid);
+var
+  c, r: Integer;
+begin
+  for c := 0 to Pred(Grid.ColCount) do
+    for r := 0 to Pred(Grid.RowCount) do
+      Grid.Cells[c, r] := '';
+end;
+
+end.

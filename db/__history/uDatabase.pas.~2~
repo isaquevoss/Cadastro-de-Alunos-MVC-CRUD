@@ -1,0 +1,18 @@
+unit uDatabase;
+
+interface
+
+type
+
+  TDataBase = class
+  private
+
+  public
+
+  procedure CreateDataBase();
+
+  end;
+
+implementation
+
+end.

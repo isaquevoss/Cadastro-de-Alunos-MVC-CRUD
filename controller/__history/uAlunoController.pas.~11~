@@ -1,0 +1,38 @@
+unit uAlunoController;
+
+interface
+
+  uses
+    uAlunoModel, uAlunoDao, System.Generics.Collections;
+
+type
+
+  TAlunoController = class
+  private
+
+  public
+    function BuscarTodosAlunos(): TList<TAluno>;
+    function GravarAluno(_Aluno: TAluno): Boolean;
+  end;
+
+  var
+    AlunoController: TAlunoController;
+
+implementation
+
+{ TAlunoController }
+
+function TAlunoController.BuscarTodosAlunos: TList<TAluno>;
+begin
+// Implementação
+end;
+
+function TAlunoController.GravarAluno(_Aluno: TAluno): Boolean;
+var
+  _AlunoDao: TAlunoDao;
+begin
+  _AlunoDao := TAlunoDao.Create();
+  _AlunoDao.save(_Aluno);
+end;
+
+end.

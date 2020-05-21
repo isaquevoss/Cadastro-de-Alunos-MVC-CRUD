@@ -1,0 +1,29 @@
+unit uAlunoController;
+
+interface
+
+  uses
+    uAlunoModel, uAlunoDao, System.Generics.Collections;
+
+type
+
+  TAlunoController = class
+  private
+
+  public
+    function BuscarTodosAlunos(): TList<TAluno>;
+  end;
+
+  var
+    AlunoController: TAlunoController;
+
+implementation
+
+{ TAlunoController }
+
+function TAlunoController.BuscarTodosAlunos: TList<TAluno>;
+begin
+// Implementação
+end;
+
+end.

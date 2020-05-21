@@ -1,0 +1,21 @@
+unit uDao;
+
+interface
+
+type
+
+  TCondition = class
+  private
+    Ffield: string;
+    Fcondition: string;
+    Fvalue: string;
+
+  public
+    property field: string read Ffield write Ffield;
+    property condition: string read Fcondition write Fcondition;
+    property value: string read Fvalue write Fvalue;
+  end;
+
+implementation
+
+end.

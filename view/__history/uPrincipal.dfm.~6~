@@ -1,0 +1,87 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 568
+  ClientWidth = 814
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Button1: TButton
+    Left = 40
+    Top = 48
+    Width = 129
+    Height = 25
+    Caption = 'Cadastrar Novo Aluno'
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 200
+    Top = 48
+    Width = 129
+    Height = 25
+    Caption = 'Alterar Aluno'
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 360
+    Top = 48
+    Width = 129
+    Height = 25
+    Caption = 'Deletar Aluno'
+    TabOrder = 2
+  end
+  object pgControl: TPageControl
+    Left = 0
+    Top = 143
+    Width = 814
+    Height = 425
+    ActivePage = tsAluno
+    Align = alBottom
+    TabOrder = 3
+    object tsListaAlunos: TTabSheet
+      Caption = 'Lista de Alunos'
+      ExplicitWidth = 785
+      object DBGrid1: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 806
+        Height = 397
+        Align = alClient
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+    end
+    object tsAluno: TTabSheet
+      Caption = 'Aluno'
+      ImageIndex = 1
+      ExplicitWidth = 785
+      object Button4: TButton
+        Left = 36
+        Top = 360
+        Width = 75
+        Height = 25
+        Caption = 'Cancelar'
+        TabOrder = 0
+      end
+      object Button5: TButton
+        Left = 140
+        Top = 360
+        Width = 75
+        Height = 25
+        Caption = 'Gravar'
+        TabOrder = 1
+      end
+    end
+  end
+end

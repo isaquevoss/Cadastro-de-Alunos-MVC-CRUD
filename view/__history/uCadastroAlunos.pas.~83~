@@ -1,0 +1,194 @@
+unit uCadastroAlunos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ComCtrls,
+  uAlunoModel, uAlunoController, System.Generics.Collections;
+
+type
+  TfrmCadastroAlunos = class(TForm)
+    BtCadastrarAluno: TButton;
+    BtAlterarAluno: TButton;
+    BtDeletarAluno: TButton;
+    pgControl: TPageControl;
+    tsListaAlunos: TTabSheet;
+    tsAluno: TTabSheet;
+    BtCancelar: TButton;
+    btGravarAluno: TButton;
+    Grid: TStringGrid;
+    EdNome: TEdit;
+    EdTurma: TEdit;
+    EdId: TEdit;
+    EdSobreNome: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    DtDataNascimento: TDateTimePicker;
+    procedure BtAlterarAlunoClick(Sender: TObject);
+    procedure btGravarAlunoClick(Sender: TObject);
+    procedure BtCadastrarAlunoClick(Sender: TObject);
+    procedure BtDeletarAlunoClick(Sender: TObject);
+    procedure GridSelectCell(Sender: TObject; ACol, ARow: Integer;
+      var CanSelect: Boolean);
+  private
+    FAlunoSelecionado: TAluno;
+    { Private declarations }
+    // Métodos privados da VIEW
+    procedure CarregarGrid(_Alunos: TList<TAluno>);
+    procedure CarregarAlunoGrid(_Aluno: TAluno; _Row: Integer);
+    procedure EditarAluno(_Aluno: TAluno);
+    procedure NovoAluno();
+    procedure GravarAluno();
+
+    property AlunoSelecionado: TAluno read FAlunoSelecionado
+      write FAlunoSelecionado;
+  public
+    { Public declarations }
+    // Métodos públicos da VIEW
+    procedure BuscarAlunos();
+  end;
+
+var
+  frmCadastroAlunos: TfrmCadastroAlunos;
+
+implementation
+
+uses
+  uHelpers;
+
+{$R *.dfm}
+{ TfrmCadastroAlunos }
+
+procedure TfrmCadastroAlunos.BtAlterarAlunoClick(Sender: TObject);
+var
+  _Aluno: TAluno;
+begin
+  _Aluno := TAluno(Grid.Objects[0, Grid.Row]);
+  EditarAluno(_Aluno);
+end;
+
+procedure TfrmCadastroAlunos.BtCadastrarAlunoClick(Sender: TObject);
+begin
+  NovoAluno();
+end;
+
+procedure TfrmCadastroAlunos.BtDeletarAlunoClick(Sender: TObject);
+begin
+  if MessageDlg('Tem certeza que deseja excluir o aluno ' +
+    AlunoSelecionado.nome + '?', mtWarning, [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo],
+    0, mbNo) = mrYes then
+  begin
+    if AlunoController.DeletarAluno(AlunoSelecionado) then
+      ShowMessage('Aluno deletado com sucesso.')
+    else
+    begin
+      ShowMessage('Houve uma falha e não foi possível realizar a operação.');
+      exit;
+    end;
+
+    BuscarAlunos();
+  end;
+
+end;
+
+procedure TfrmCadastroAlunos.btGravarAlunoClick(Sender: TObject);
+begin
+  GravarAluno();
+end;
+
+procedure TfrmCadastroAlunos.BuscarAlunos;
+var
+  _Alunos: TList<TAluno>;
+begin
+  _Alunos := AlunoController.BuscarTodosAlunos;
+  CarregarGrid(_Alunos);
+end;
+
+procedure TfrmCadastroAlunos.CarregarAlunoGrid(_Aluno: TAluno; _Row: Integer);
+begin
+  Grid.Objects[0, _Row] := _Aluno;
+  Grid.Cells[0, _Row] := IntToStr(_Aluno.id);
+  Grid.Cells[1, _Row] := _Aluno.nome;
+  Grid.Cells[2, _Row] := _Aluno.sobrenome;
+  Grid.Cells[2, _Row] := _Aluno.turma;
+  Grid.Cells[2, _Row] := FormatDateTime('dd/mm/yyyy', _Aluno.data_nascimento);
+end;
+
+procedure TfrmCadastroAlunos.CarregarGrid(_Alunos: TList<TAluno>);
+var
+  i: Integer;
+begin
+  ClearStringGrid(Grid);
+  Grid.Cells[0, 0] := 'Id';
+  Grid.Cells[0, 0] := 'Nome';
+  Grid.Cells[0, 0] := 'Sobrenome';
+  Grid.Cells[0, 0] := 'Turma';
+  Grid.Cells[0, 0] := 'Data de Nascimento';
+
+  Grid.RowCount := _Alunos.Count + 1;
+  for i := 1 to _Alunos.Count do
+  begin
+    CarregarAlunoGrid(_Alunos[i], i);
+  end;
+end;
+
+procedure TfrmCadastroAlunos.EditarAluno(_Aluno: TAluno);
+begin
+  AlunoSelecionado := _Aluno; // Aqui estamos colocando
+  EdId.Text := IntToStr(_Aluno.id);
+  EdNome.Text := _Aluno.nome;
+  EdSobreNome.Text := _Aluno.sobrenome;
+  DtDataNascimento.DateTime := _Aluno.data_nascimento;
+  EdTurma.Text := _Aluno.turma;
+
+  pgControl.ActivePage := tsAluno;
+end;
+
+procedure TfrmCadastroAlunos.GravarAluno;
+begin
+  AlunoSelecionado.nome := EdNome.Text;
+  AlunoSelecionado.sobrenome := EdSobreNome.Text;
+  AlunoSelecionado.data_nascimento := DtDataNascimento.DateTime;
+  AlunoSelecionado.turma := EdTurma.Text;
+
+  if AlunoController.GravarAluno(AlunoSelecionado) then
+  begin
+    ShowMessage('Dados gravados com Sucesso');
+    pgControl.ActivePage := tsListaAlunos;
+    CarregarAlunoGrid(AlunoSelecionado, Grid.Row);
+  end
+  else
+    ShowMessage('Houve um erro e não foi possível gravar os dados!');
+end;
+
+procedure TfrmCadastroAlunos.GridSelectCell(Sender: TObject;
+  ACol, ARow: Integer; var CanSelect: Boolean);
+begin
+  if ARow > 0 then
+    AlunoSelecionado := TAluno(Grid.Objects[ACol, ARow]);  // Aqui estamos sempre atualizando o aluno selecionado ao mudar de linha no grid;
+end;
+
+procedure TfrmCadastroAlunos.NovoAluno;
+var
+  _aluno: TAluno;
+begin
+  Grid.RowCount := Grid.RowCount + 1;
+  Grid.Row := Grid.RowCount - 1;
+  pgControl.ActivePage := tsAluno;
+  _aluno := TAluno.Create();
+  Grid.Objects[0,Grid.Row] := _aluno;
+  AlunoSelecionado := _aluno;
+
+  EdId.Text := 'NOVO';
+  EdNome.Text := '';
+  EdSobreNome.Text := '';
+  EdTurma.Text := '';
+end;
+
+end.

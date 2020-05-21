@@ -1,0 +1,48 @@
+unit uDatabase;
+
+interface
+
+uses
+  uDB;
+
+type
+
+  TDataBase = class
+  private
+
+
+    procedure CreateTableAlunos();
+  public
+
+  procedure CreateTables();
+
+  procedure CreateDataBase();
+
+  end;
+
+implementation
+
+uses
+  FireDAC.Comp.Client;
+
+{ TDataBase }
+
+procedure TDataBase.CreateDataBase;
+begin
+  CreateTables();
+end;
+
+procedure TDataBase.CreateTableAlunos;
+var
+  Qr: TFDQuery;
+begin
+  DB.instanceQuery(Qr);
+
+end;
+
+procedure TDataBase.CreateTables;
+begin
+
+end;
+
+end.
